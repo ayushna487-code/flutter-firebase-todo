@@ -1,119 +1,95 @@
-# flutter-firebase-todo
+Flutter Todo App Herody
 
-A Flutter To-Do List App with **Firebase Authentication** and **Firebase Realtime Database**. Users can sign up or log in securely, create and manage tasks (add, edit, delete, mark as completed), with **real-time updates** and **efficient state management** using Riverpod. The app features a clean, responsive UI.
+A clean, modern Todo application built with Flutter, demonstrating Firebase integration, state management with Riverpod, and clean architecture principles.
 
----
+Features
 
-## Features
+✅ Firebase Authentication (Email & Password)
 
-- Firebase Authentication (Email & Password)
-- Firebase Realtime Database
-- Add, Edit, Delete Tasks
-- Mark Tasks as Completed
-- Real-time Updates
-- Riverpod State Management
-- Clean Architecture & Responsive UI
+✅ Firebase Realtime Database for storing tasks
 
----
+✅ State management using Riverpod
 
-## Tech Stack
+✅ Add, update, and delete tasks
 
-- Flutter
-- Firebase (Authentication & Realtime Database)
-- Riverpod (State Management)
+✅ Mark tasks as completed
 
-2️⃣ Install Dependencies
+✅ Responsive and clean UI design
+
+  ***Tech Stack
+
+1. Flutter – Cross-platform mobile framework
+
+2. Firebase Authentication – User login and registration
+
+3. Firebase Realtime Database – Store and sync tasks in real-time
+
+4. Riverpod – Reactive state management
+
+** Project Structure**
+lib/
+├── core/
+│   └── constants/        # App constants and configurations
+├── application/
+│   └── providers/        # State management with Riverpod
+├── domain/
+│   └── models/           # Data models
+├── infrastructure/
+│   └── services/         # Firebase and external services
+└── presentation/
+    ├── screens/          # UI Screens
+    └── widgets/          # Reusable UI components
+
+This structure follows clean architecture principles:
+
+Domain → Core business logic and data models
+
+Application → State management and providers
+
+Infrastructure → External services (Firebase)
+
+Presentation → UI layer (screens and widgets)
+
+** Getting Started **
+1. Clone the repository
+git clone <repository-url>
+cd flutter-todo-app
+2. Install dependencies
 flutter pub get
+3. Configure Firebase
 
+Go to Firebase Console
+ and create a new project.
 
-3️⃣ Setup Firebase
-a. Create Firebase Project
+Add an Android and/or iOS app to the project.
 
-1. Go to Firebase Console
+Download the configuration files:
 
-2. Click Add project and follow the steps.
+google-services.json → Android (android/app/)
 
-b. Add Android App
+GoogleService-Info.plist → iOS (ios/Runner/)
 
-1 .Click Add App → Android
-
-2. Enter your package name (e.g., com.example.flutter_firebase_todo)
-
-3. Download google-services.json
-
-4. Place it in your Flutter project at:
-
-5. android/app/google-services.json
-
-   
-c. Add iOS App (Optional)
-
-1. Click Add App → iOS
-
-2. Enter your iOS bundle ID
-
-3. Download GoogleService-Info.plist
-
-4. Place it in your Flutter project at:
-
-5. ios/Runner/GoogleService-Info.plist
-   
-d. Enable Firebase Authentication
-
-1. Go to Authentication → Sign-in method
-
-2. Enable Email/Password
-
-e. Enable Realtime Database
-
-1. Go to Realtime Database → Create Database
-2.Set rules (for testing):
-
-{
-  "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
-  }
-}
-
-4️⃣ Run the App
-a. On Emulator / Device
+4. Run the app
 flutter run
+Usage
 
-b. Build APK (for Android)
-flutter build apk --release
+Register or log in with your email and password.
 
-APK will be available at:
+Add new tasks in the input field and tap the Add button.
 
-build/app/outputs/flutter-apk/app-release.apk
+Mark tasks as completed using the checkbox.
 
+Delete tasks using the trash icon.
 
-Troubleshooting
+Purpose
 
-Firebase not initialized error → Make sure firebase_core is initialized in main.dart:
+This project was developed to demonstrate:
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
-}
+Firebase integration with Flutter
 
-Network / Internet issues → Make sure your emulator/device is connected.
+State management using Riverpod
 
-Packages not found → Run flutter pub get again.
+Clean architecture in mobile app development
 
-*** Folder / File Highlights
+CRUD operations in a Todo application
 
-1. main.dart → App entry point
-
-2. application/providers/ → Riverpod state management
-
-3. domain/models/task_model.dart → Task data structure
-
-4. infrastructure/firebase/ → Firebase CRUD operations
-
-5. presentation/screens/ → UI screens (Login, Signup, Tasks)
-
-6. presentation/widgets/ → Reusable widgets like buttons, task cards
-Set rules (for testing):
-## Project Structure
